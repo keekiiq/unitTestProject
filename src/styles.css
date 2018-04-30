@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bulmaswatch/lumen/bulmaswatch.min.css";
 
 body {
     padding-top: 80px;
