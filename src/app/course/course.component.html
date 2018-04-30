@@ -1,3 +1,49 @@
-<p>
-  course works!
-</p>
+
+
+<br>
+
+
+     <section class="container">
+
+
+       <div class="column">
+         <h1 class="title is-2">Course list</h1>
+		   
+		   <td><button type="submit" class="button is-primary is-medium" (click)="onNew()">Add course</a></td><br><br>
+         <table class="table is-bordered is-hoverable">
+    <thead>
+      <tr>
+        <th><abbr title="Position">NO.</abbr></th>
+        <th><abbr title="Course ID">Couse ID</abbr></th>
+        <th><abbr title="Title">Title</abbr></th>
+        <th><abbr title="Section">Section</abbr></th>
+        <th><abbr title="Credit">Credit</abbr></th>
+        <th><abbr title="Day">Day</abbr></th>
+        <th><abbr title="Time">Time</abbr></th>
+        <th><abbr title="Room">Room</abbr></th>
+		  <th><abbr title="Edit">Edit</abbr></th>
+		  <th><abbr title="Delete">Delete</abbr></th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let course of courses; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{course.courseId}}
+        </td>
+        <td>{{course.title}}</td>
+        <td>{{course.section}}</td>
+        <td>{{course.credit}}</td>
+        <td>{{course.day.day + '/' + course.day.month + '/' + course.day.year}}</td>
+        <td>{{course.time}}</td>
+        <td>{{course.section}}</td>
+        <td><a class="button is-warning is-focused" (click)="onEdit(i)">Edit</a></td>
+		  <td><a class="button is-danger is-focused" (click)="onDelete(i)">Delete</a></td>
+
+      </tr>
+
+    </tbody>
+    </table>
+       </div>
+   </section>

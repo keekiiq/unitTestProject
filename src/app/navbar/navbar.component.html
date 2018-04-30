@@ -1,34 +1,23 @@
-<link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-
-    <section class="hero is-info is-medium is-bold">
-      <div class="hero-head">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="mainPage_teacher.html">
-      <h1 class="title is-1">TEACHER CP</h1>
-    </a>
-
-    <div class="navbar-burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Logo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarsExampleDefault"
+  aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+  <a class="nav-link" routerLink="">Home
+  <span class="sr-only">(current)</span>
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" routerLink="registration">Registration</a>
+  </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
   </div>
-            <div id="navbarMenu" class="navbar-menu">
-              <div class="navbar-end">
-                <a class="navbar-item is-active" routerLink="course">
-                  Home
-                </a>
-                
-                <span class="navbar-item">
-                  <a class="button is-white is-outlined is-small" href="../login.html">
-                    <span>Logout</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-        </nav>
-      </div>
-
-    </section>
+  </nav>
