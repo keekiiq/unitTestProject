@@ -35,7 +35,7 @@
     <div class="field">
         <label class="label">Credit</label>
         <div class="control">
-            <input class="input" type="text" [(ngModel)]="regModel.section" name="section" placeholder="Enter Section" required/>
+            <input class="input" type="text" [(ngModel)]="regModel.credit" name="credit" placeholder="Enter Section" required/>
         </div>
         </div>
   
@@ -43,7 +43,7 @@
     <div class="field">
     <label class="label">Day</label>
     <div class="control">
-    <input class="input" type="text" placeholder="ex.Tue/Fri" value="" required="">
+    <input class="input" type="text" [(ngModel)]="regModel.day" name="day" placeholder="ex.Tue/Fri" value="" required="">
     </div>
     </div>
     
@@ -51,7 +51,7 @@
     <div class="field">
     <label class="label">Time</label>
     <div class="control">
-    <input class="input" type="text" placeholder="ex.13.00-14.30" value="" required="">
+    <input class="input" type="text" [(ngModel)]="regModel.time" name="time" placeholder="ex.13.00-14.30" value="" required="">
     </div>
     </div>
     
@@ -59,7 +59,7 @@
     <div class="field">
     <label class="label">Room</label>
     <div class="control">
-    <input class="input" type="text"  placeholder="Room Number" value="" required="">
+    <input class="input" type="text" [(ngModel)]="regModel.room" name="room"  placeholder="Room Number" value="" required="">
     </div>
     </div>
     
@@ -67,7 +67,7 @@
     <div class="field">
     <label class="label">Seat</label>
     <div class="control">
-    <input class="input" type="text" placeholder="Enter amount of Seat" value=""  required>
+    <input class="input" type="text" [(ngModel)]="regModel.seat" name="seat" placeholder="Enter amount of Seat" value=""  required>
     </div>
     </div>
     
@@ -75,16 +75,16 @@
     <div class="field">
     <label class="label">Description</label>
     <div class="control">
-    <input class="textarea" type="textarea" placeholder="type description here." value="" required="">
+    <input class="textarea" type="textarea" [(ngModel)]="regModel.description" name="description" placeholder="type description here." value="" required="">
     </div>
     </div>
     
     <div class="field is-grouped">
       <div class="control">
-        <input class="button is-link" type="submit">
+        <button class="button is-link" type="submit">{{submitType}}</button>
      </div>
       <div class="control">
-        <a class="button is-text" href="mainPage_admin.html">Cancel</a>
+        <button class="button is-text" (click)="onCancel()">Cancel</button>
       </div>
     </div>
     </form>
@@ -101,6 +101,7 @@
       <th><abbr title="Day">Day</abbr></th>
       <th><abbr title="Time">Time</abbr></th>
       <th><abbr title="Room">Room</abbr></th>
+      <th><abbr title="Seat">Seat</abbr></th>
       <th><abbr title="Description">Description</abbr></th>
     <th><abbr title="Edit">Edit</abbr></th>
     <th><abbr title="Delete">Delete</abbr></th>
@@ -118,7 +119,8 @@
       <td>{{course.credit}}</td>
       <td>{{course.day}}</td>
       <td>{{course.time}}</td>
-      <td>{{course.section}}</td>
+      <td>{{course.room}}</td>
+      <td>{{course.seat}}</td>
       <td>{{course.description}}</td>
       <td><a class="button is-warning is-focused" (click)="onEdit(i)">Edit</a></td>
     <td><a class="button is-danger is-focused" (click)="onDelete(i)">Delete</a></td>
