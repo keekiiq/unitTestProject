@@ -1,3 +1,131 @@
-<p>
-  course works!
-</p>
+<link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css">
+      
+<br><br>
+<div class="container">  
+
+
+<button type="submit" class="button is-primary is-medium" (click)="onNew()">Add course</button><br>
+<div class="regentry" *ngIf="showNew">
+<form (ngSubmit)="onSave()">
+    <br>
+    <div class="field">
+    <label class="label" >Course ID</label>
+    <div class="control">
+        <input class="input" type="text" [(ngModel)]="regModel.courseId" name="courseId" placeholder="6 digits course ID" value="" required="">
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Title</label>
+    <div class="control">
+        <input class="input" type="text" [(ngModel)]="regModel.title" name="title" placeholder="Enter Title" value="" required="">
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Section</label>
+    <div class="control">
+        <input class="input" type="text" [(ngModel)]="regModel.section" name="section" placeholder="Enter Section" required/>
+    </div>
+    </div>
+
+    
+    <div class="field">
+        <label class="label">Credit</label>
+        <div class="control">
+            <input class="input" type="text" [(ngModel)]="regModel.section" name="section" placeholder="Enter Section" required/>
+        </div>
+        </div>
+  
+    
+    <div class="field">
+    <label class="label">Day</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="ex.Tue/Fri" value="" required="">
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Time</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="ex.13.00-14.30" value="" required="">
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Room</label>
+    <div class="control">
+    <input class="input" type="text"  placeholder="Room Number" value="" required="">
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Seat</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="Enter amount of Seat" value=""  required>
+    </div>
+    </div>
+    
+    
+    <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+    <input class="textarea" type="textarea" placeholder="type description here." value="" required="">
+    </div>
+    </div>
+    
+    <div class="field is-grouped">
+      <div class="control">
+        <input class="button is-link" type="submit">
+     </div>
+      <div class="control">
+        <a class="button is-text" href="mainPage_admin.html">Cancel</a>
+      </div>
+    </div>
+    </form>
+  </div>
+<br>
+<table class="table is-bordered is-hoverable">
+  <thead>
+    <tr>
+      <th><abbr title="Position">NO.</abbr></th>
+      <th><abbr title="Course ID">Couse ID</abbr></th>
+      <th><abbr title="Title">Title</abbr></th>
+      <th><abbr title="Section">Section</abbr></th>
+      <th><abbr title="Credit">Credit</abbr></th>
+      <th><abbr title="Day">Day</abbr></th>
+      <th><abbr title="Time">Time</abbr></th>
+      <th><abbr title="Room">Room</abbr></th>
+      <th><abbr title="Description">Description</abbr></th>
+    <th><abbr title="Edit">Edit</abbr></th>
+    <th><abbr title="Delete">Delete</abbr></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let course of courses; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{course.courseId}}
+      </td>
+      <td>{{course.title}}</td>
+      <td>{{course.section}}</td>
+      <td>{{course.credit}}</td>
+      <td>{{course.day}}</td>
+      <td>{{course.time}}</td>
+      <td>{{course.section}}</td>
+      <td>{{course.description}}</td>
+      <td><a class="button is-warning is-focused" (click)="onEdit(i)">Edit</a></td>
+    <td><a class="button is-danger is-focused" (click)="onDelete(i)">Delete</a></td>
+
+    </tr>
+
+  </tbody>
+  </table>
+
+</div>
